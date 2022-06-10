@@ -1,0 +1,13 @@
+server:
+  port: 9090
+
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: userMicroservice
+          uri: http://localhost:9191/
+          predicates:
+            - Path=/user/**
+
